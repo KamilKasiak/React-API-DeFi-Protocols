@@ -1,0 +1,49 @@
+@import "~bootstrap/scss/bootstrap";
+
+.protocol-container {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  border: 1px solid #000;
+  overflow-x: hidden;
+
+  .protocol-name {
+    h1 {
+      font-size: 1.2rem;
+      overflow-y: hidden;
+    }
+  }
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+  .audits {
+    word-break: break-all;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    overflow-x: hidden;
+    height: 15vh;
+    max-height: 20vh;
+  }
+  .description {
+    // word-break: break-all;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+    height: 15vh;
+    max-height: 20vh;
+  }
+  .red {
+    color: rgb(243, 24, 24);
+  }
+  .green {
+    color: rgb(61, 255, 47);
+  }
+  pre {
+    overflow-x: hidden;
+    font-weight: bold;
+    color: aqua;
+  }
+}
