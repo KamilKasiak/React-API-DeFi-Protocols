@@ -6,6 +6,9 @@
   width: 100%;
   border: 1px solid #000;
   overflow-x: hidden;
+  opacity: 0;
+  animation: fadeInUp 2s 2s;
+  animation-fill-mode: forwards;
 
   .protocol-name {
     h1 {
@@ -17,6 +20,7 @@
     height: 30px;
     width: 30px;
     margin-right: 10px;
+    border-radius: 50%;
   }
   .audits {
     word-break: break-all;

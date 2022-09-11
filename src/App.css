@@ -24,12 +24,17 @@
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
+  animation: fadeIn 1s 1.8s backwards;
 }
 
 .search-text {
   margin-bottom: 3rem;
   text-align: center;
   overflow-y: hidden;
+}
+
+.searchBar {
+  margin-bottom: 2rem;
 }
 
 .search-input {
