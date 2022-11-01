@@ -1,20 +1,20 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import Protocols from "./Protocols";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Slider from "@mui/material/Slider";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
+import Protocols from './Protocols';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Slider from '@mui/material/Slider';
 
 function App() {
   const [protocols, setProtocols] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [value, setValue] = useState(300);
 
   useEffect(() => {
     axios
-      .get("https://api.llama.fi/protocols", {
+      .get('https://api.llama.fi/protocols', {
         params: {},
       })
       .then((res) => {
@@ -36,7 +36,7 @@ function App() {
   );
 
   function valueLabelFormat(value) {
-    const units = ["mil", "bil"];
+    const units = ['mil', 'bil'];
     let unitIndex = 0;
     let scaledValue = value;
     while (scaledValue >= 1000 && unitIndex < units.length - 1) {
@@ -51,26 +51,25 @@ function App() {
   }
 
   const handleSliderChange = (event, newValue) => {
-    if (typeof newValue === "number") {
+    if (typeof newValue === 'number') {
       setValue(newValue);
-      console.log(newValue);
     }
   };
 
   return (
-    <div className="App">
-      <div className="protocol-search">
-        <h1 className="search-text">Search protocol</h1>
-        <form className="searchBar">
+    <div className='App'>
+      <div className='protocol-search'>
+        <h1 className='search-text'>Search protocol</h1>
+        <form className='searchBar'>
           <input
-            type="text"
-            className="search-input"
-            placeholder="Search protocol name"
+            type='text'
+            className='search-input'
+            placeholder='Search protocol name'
             onChange={handleChange}
           />
         </form>
         <Box sx={{ width: 250 }}>
-          <Typography id="non-linear-slider" gutterBottom>
+          <Typography id='non-linear-slider' gutterBottom>
             TVL: {valueLabelFormat(calculateValue(value))}
           </Typography>
           <Slider
@@ -82,8 +81,8 @@ function App() {
             getAriaValueText={valueLabelFormat}
             valueLabelFormat={valueLabelFormat}
             onChange={handleSliderChange}
-            valueLabelDisplay="auto"
-            aria-labelledby="non-linear-slider"
+            valueLabelDisplay='auto'
+            aria-labelledby='non-linear-slider'
           />
         </Box>
       </div>
